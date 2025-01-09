@@ -9,27 +9,30 @@ function getComputerChoice() {
     return choice;
 }
 
-function getHumanChoice() {
-    humanInput = prompt("Enter rock/paper/scissor: ");
-    choice = humanInput.toLowerCase();
-
+function getHumanChoice(choice) {
     return choice;
 }
 
-let humanScore=0;
-let computerScore=0;
-
 function displayScore() {
     console.log(`Computer: ${computerScore}`);
+    const cpuScore = document.querySelector(".cpuScoreText");
+    cpuScore.textContent = computerScore;
     console.log(`Your Score: ${humanScore}`);
+    const yourScore = document.querySelector(".yourScoreText");
+    yourScore.textContent = humanScore;
 }
 
 
 function playRound(computerChoice, humanChoice) {
     humanChoice = getHumanChoice();
     console.log(humanChoice);
+    const yourMove = document.querySelector(".yourMoveText");
+    yourMove.textContent = humanChoice;
+
     computerChoice = getComputerChoice();
     console.log(computerChoice);
+    const cpuMove = document.querySelector(".cpuMoveText");
+    cpuMove.textContent = computerChoice;
 
     if (computerChoice===humanChoice) {console.log("It's a draw")}
     else if (computerChoice==="rock" && humanChoice==="paper") {humanScore++; console.log("Paper wins!")}
@@ -58,4 +61,22 @@ function playGame() {
 
 }
 
-playGame();
+// playGame();
+
+const btn = document.querySelector(".buttons");
+btn.addEventListener("click", (event) => {
+    const target = event.target;
+    
+    switch(target.id) {
+        case 'rock':
+            getHumanChoice("rock");
+            break;
+        case 'paper':
+            getHumanChoice("paper");
+            break;
+        case 'scissor':
+            getHumanChoice("scissor");
+            break;
+    }
+});
+
