@@ -23,60 +23,87 @@ function displayScore() {
 }
 
 
-function playRound(computerChoice, humanChoice) {
-    humanChoice = getHumanChoice();
+function playRound() {
+    let humanChoice = getHumanChoice(yourChoice);
     console.log(humanChoice);
-    const yourMove = document.querySelector(".yourMoveText");
+    let yourMove = document.querySelector(".yourMoveText");
     yourMove.textContent = humanChoice;
 
-    computerChoice = getComputerChoice();
+    let computerChoice = getComputerChoice();
     console.log(computerChoice);
-    const cpuMove = document.querySelector(".cpuMoveText");
+    let cpuMove = document.querySelector(".cpuMoveText");
     cpuMove.textContent = computerChoice;
 
+    const resultText = document.querySelector(".resultMessage");
+
     if (computerChoice===humanChoice) {console.log("It's a draw")}
-    else if (computerChoice==="rock" && humanChoice==="paper") {humanScore++; console.log("Paper wins!")}
-    else if (computerChoice==="rock" && humanChoice==="scissor") {computerScore++; console.log("Rock beats Scissors!")}
-    else if (computerChoice==="paper" && humanChoice==="rock") {computerScore++; console.log("Paper wraps Rocks!")}
-    else if (computerChoice==="paper" && humanChoice==="scissor") {humanScore++; console.log("Scissor cuts Paper!")}
-    else if (computerChoice==="scissor" && humanChoice==="rock") {humanScore++; console.log("Rock breaks Scissors")}
-    else if (computerChoice==="scissor" && humanChoice==="paper") {computerScore++; console.log("Scissor wins!")}
-    else console.log("Something went wrong!");
+    else if (computerChoice==="rock" && humanChoice==="paper") {humanScore++; resultText.textContent="Paper wins!"}
+    else if (computerChoice==="rock" && humanChoice==="scissor") {computerScore++; resultText.textContent="Rock beats Scissors!"}
+    else if (computerChoice==="paper" && humanChoice==="rock") {computerScore++; resultText.textContent="Paper wraps Rocks!"}
+    else if (computerChoice==="paper" && humanChoice==="scissor") {humanScore++; resultText.textContent="Scissor cuts Paper!"}
+    else if (computerChoice==="scissor" && humanChoice==="rock") {humanScore++; resultText.textContent="Rock breaks Scissors"}
+    else if (computerChoice==="scissor" && humanChoice==="paper") {computerScore++; resultText.textContent="Scissor wins!"}
+    else resultText.textContent="Something went wrong!";
 }
 
-function playGame() {
+function restartGame() {
 
     humanScore = 0;
     computerScore = 0;
 
-    for (let i=0; i<5; i++) {
-        playRound();
-        displayScore();
-    }
+    if (humanScore===5 || computerScore===5) {
 
-    if (humanScore===computerScore) {console.log("It's a fucking draw!")}
-    else if (humanScore>computerScore) {console.log("You won motherfucker!")}
-    else if (humanScore<computerScore) {console.log("You lose Nigga!")}
-    else console.log("Something went wrong!");
+        const resultText = document.querySelector(".resultMessage");
+    
+        if (humanScore>computerScore) {resultText.textContent="You won motherfucker!"}
+        else if (humanScore<computerScore) {resultText.textContent="You lose Nigga!"}
+        else resultText.textContent="Something went wrong!";
+    
+        restartGame();
+    }
+    // do {playRound();
+    // displayScore();
+    // } while (humanScore===5 || computerScore===5);
+    
+
+    // if (humanScore===computerScore) {console.log("It's a fucking draw!")}
+    // else if (humanScore>computerScore) {console.log("You won motherfucker!")}
+    // else if (humanScore<computerScore) {console.log("You lose Nigga!")}
+    // else console.log("Something went wrong!");
 
 }
 
-// playGame();
+const rockButton = document.querySelector("#rock");
+rockButton.addEventListener("click", () => {
+    yourChoice = "rock";
+    playRound();
+    displayScore();
+})
 
-const btn = document.querySelector(".buttons");
-btn.addEventListener("click", (event) => {
-    const target = event.target;
-    
-    switch(target.id) {
-        case 'rock':
-            getHumanChoice("rock");
-            break;
-        case 'paper':
-            getHumanChoice("paper");
-            break;
-        case 'scissor':
-            getHumanChoice("scissor");
-            break;
-    }
-});
+const paperButton = document.querySelector("#paper");
+paperButton.addEventListener("click", () => {
+    yourChoice="paper";
+    playRound();
+    displayScore();
+})
 
+const scissorButton = document.querySelector("#scissor");
+scissorButton.addEventListener("click", () => {
+    yourChoice="scissor";
+    playRound();
+    displayScore();
+})
+
+humanScore=0;
+computerScore=0;
+
+// if (humanScore===5 || computerScore===5) {
+
+//     const endText = document.querySelector(".endMessage");
+
+//     if (humanScore>computerScore) {endText.textContent="You won motherfucker!"}
+//     else if (humanScore<computerScore) {endText.textContent="You lose Nigga!"}
+//     else endText.textContent="Something went wrong!";
+
+//     restartGame();
+// }
