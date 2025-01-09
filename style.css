@@ -7,7 +7,7 @@ body {
     gap: 50px;
 }
 
-.buttons {
+.buttonList {
     display: flex;
     gap: 50px;
 }
