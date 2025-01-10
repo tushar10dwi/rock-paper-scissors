@@ -10,17 +10,20 @@ body {
 .buttonList {
     display: flex;
     gap: 50px;
+    flex-wrap: wrap;
     
 }
 
 .movePlayed {
     display: flex;
     gap: 50px;
+    flex-wrap: wrap;
 }
 
 .score {
     display: flex;
     gap: 50px;
+    flex-wrap: wrap;
 }
 
 .buttons {
@@ -55,9 +58,16 @@ label, p {
 
 }
 
-h1 {
+.title {
+    display: flex;
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
     font-size: 50px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    text-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .resultMessage {
