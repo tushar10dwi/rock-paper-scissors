@@ -10,6 +10,7 @@ body {
 .buttonList {
     display: flex;
     gap: 50px;
+    
 }
 
 .movePlayed {
@@ -20,4 +21,45 @@ body {
 .score {
     display: flex;
     gap: 50px;
+}
+
+.buttons {
+    width: 125px;
+    height: 125px;
+    background-color: rgb(185, 255, 250);
+    border: 5px solid black;
+    border-radius: 12px;
+}
+
+.yourMoveDisplay,
+.cpuMoveDisplay,
+.yourScoreDisplay,
+.cpuScoreDisplay {
+    width: 150px;
+    height: 50px;
+    border: 4px solid black;
+    background-color: hsl(322, 100%, 88%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+
+}
+
+label, p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    white-space: pre;
+
+}
+
+h1 {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 50px;
+}
+
+.resultMessage {
+    font-size: 30px;
 }
