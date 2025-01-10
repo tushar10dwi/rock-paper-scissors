@@ -17,12 +17,12 @@ function playRound() {
     let humanChoice = getHumanChoice(yourChoice);
     console.log(humanChoice);
     let yourMove = document.querySelector(".yourMoveText");
-    yourMove.textContent = humanChoice;
+    yourMove.textContent = capitalize(humanChoice);
 
     let computerChoice = getComputerChoice();
     console.log(computerChoice);
     let cpuMove = document.querySelector(".cpuMoveText");
-    cpuMove.textContent = computerChoice;
+    cpuMove.textContent = capitalize(computerChoice);
 
     const resultText = document.querySelector(".resultMessage");
 
@@ -31,7 +31,7 @@ function playRound() {
     else if (computerChoice==="rock" && humanChoice==="scissor") {++computerScore; resultText.textContent="Rock beats Scissors!"}
     else if (computerChoice==="paper" && humanChoice==="rock") {++computerScore; resultText.textContent="Paper wraps Rocks!"}
     else if (computerChoice==="paper" && humanChoice==="scissor") {++humanScore; resultText.textContent="Scissor cuts Paper!"}
-    else if (computerChoice==="scissor" && humanChoice==="rock") {++humanScore; resultText.textContent="Rock breaks Scissors"}
+    else if (computerChoice==="scissor" && humanChoice==="rock") {++humanScore; resultText.textContent="Rock breaks Scissors!"}
     else if (computerChoice==="scissor" && humanChoice==="paper") {++computerScore; resultText.textContent="Scissor wins!"}
     else resultText.textContent="Something went wrong!";
 }
@@ -51,8 +51,8 @@ function checkGame() {
 
         const resultText = document.querySelector(".resultMessage");
     
-        if (humanScore>computerScore) {resultText.textContent="You won motherfucker!\n GAME OVER"}
-        else if (humanScore<computerScore) {resultText.textContent="You lose Nigga!\n GAME OVER"}
+        if (humanScore>computerScore) {resultText.textContent="You won! GAME OVER"}
+        else if (humanScore<computerScore) {resultText.textContent="You lose! GAME OVER"}
         else resultText.textContent="Something went wrong!";
     
     }
@@ -105,3 +105,7 @@ computerScore=0;
 
 //     restartGame();
 // }
+function capitalize(string) {
+    firstLetter = string.charAt(0).toUpperCase();
+    return firstLetter+string.substr(1);
+}
