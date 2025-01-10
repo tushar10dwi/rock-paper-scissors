@@ -8,24 +8,33 @@
     <link rel= stylesheet href="./style.css">
 </head>
 <body>
+    <h1>ROCK - PAPER - SCISSORS</h1>
     <div class="buttonList">
-        <button id="rock" class="buttons">Rock</button>
-        <button id="paper" class="buttons">Paper</button>
-        <button id="scissor" class="buttons">Scissor</button>
+        <button id="rock" class="buttons"><img src="./fist.png" width=75px height="auto"></button>
+        <button id="paper" class="buttons"><img src="./hand-paper.png" width=75px height="auto"></button>
+        <button id="scissor" class="buttons"><img src="./scissors.png" width=75px height="auto"></button>
     </div>
     
     <div class="movePlayed">
-        <label class="yourMove">You:</label>
-        <p class="yourMoveText"></p>
-        <label class="cpuMove">CPU:</label>
-        <p class="cpuMoveText"></p>
+        <div class="yourMoveDisplay">
+            <label class="yourMove">You: </label>
+            <p class="yourMoveText"></p>
+        </div>
+        <div class="cpuMoveDisplay">
+            <label class="cpuMove">CPU: </label>
+            <p class="cpuMoveText"></p>
+        </div>
     </div>
 
     <div class="score">
-        <label class="yourScore">Your Score:</label>
-        <p class="yourScoreText"></p>
-        <label class="cpuScore">CPU Score:</label>
-        <p class="cpuScoreText"></p>
+        <div class="yourScoreDisplay">
+            <label class="yourScore">Your Score: </label>
+            <p class="yourScoreText"></p>
+        </div>
+        <div class="cpuScoreDisplay">
+            <label class="cpuScore">CPU Score: </label>
+            <p class="cpuScoreText"></p>
+        </div>
     </div>
 
     <div class="result">
