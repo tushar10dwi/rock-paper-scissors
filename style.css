@@ -1,8 +1,8 @@
 body {
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 50px;
 }
@@ -14,15 +14,19 @@ body {
     
 }
 
+.buttonList2 {
+    margin-top: -50px;
+}
+
 .movePlayed {
     display: flex;
-    gap: 50px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
 .score {
     display: flex;
-    gap: 50px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
@@ -30,19 +34,19 @@ body {
     width: 125px;
     height: 125px;
     background-color: rgb(185, 255, 250);
-    border: 5px solid black;
-    border-radius: 12px;
+    border: 3px solid black;
+    border-radius: 100px;
+
 }
 
 .yourMoveDisplay,
 .cpuMoveDisplay,
 .yourScoreDisplay,
 .cpuScoreDisplay {
-    width: 150px;
+    width: 125px;
     height: 50px;
-    border: 4px solid black;
-    background-color: hsl(322, 100%, 88%);
-    border-radius: 20px;
+    border: 3px solid black;
+    background-color: hsl(321, 100%, 88%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,8 +55,7 @@ body {
 }
 
 label, p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 800;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
     white-space: pre;
 
@@ -62,14 +65,18 @@ label, p {
     display: flex;
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
-    font-size: 50px;
+    font-size: 40px;
     flex-wrap: wrap;
-    margin-top: 50px;
     text-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .resultMessage {
-    font-size: 30px;
+    font-size: 25px;
+    margin-bottom: 100px;
+    margin-top: -20px;
+    border: 3px solid black;
+    padding: 2px 10px;
+    background-color: rgb(185, 255, 250);
 }
