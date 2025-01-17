@@ -51,17 +51,25 @@ function checkGame() {
 
         const resultText = document.querySelector(".resultMessage");
     
-        if (humanScore>computerScore) {resultText.textContent="You won! GAME OVER"}
-        else if (humanScore<computerScore) {resultText.textContent="You lose! GAME OVER"}
+        if (humanScore>computerScore) {resultText.textContent="You won! GAME OVER";
+            resultText.style.backgroundColor = "greenyellow";
+        }
+        else if (humanScore<computerScore) {resultText.textContent="You lose! GAME OVER";
+            resultText.style.backgroundColor = "red";
+        }
         else resultText.textContent="Something went wrong!";
     
     }
 }
 
 function resetGame() {
+    const resultText = document.querySelector(".resultMessage");
+
     if (humanScore===5 || computerScore===5) {
         humanScore=0;
         computerScore=0;
+        resultText.style.backgroundColor = "rgb(185, 255, 250)";
+        
     }
 }
 
